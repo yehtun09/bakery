@@ -119,13 +119,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="header__menu mobile-menu">
+                        <?php 
+                            $active = $_SERVER["PHP_SELF"];
+                        ?>
                         <ul>
-                            <li class="active"><a href="./index.php">Home</a></li>
-                            <li><a href="./about.php">About</a></li>
-                            <li><a href="./shop.php">Shop</a></li>
-                            <li><a href="./shop-details.php">Shop Details</a></li>
-                            <li><a href="./shoping-cart.php">Shoping Cart</a></li>
-                            <li><a href="./contact.php">Contact</a></li>
+                            <li class='<?php echo ($active == '/bakery/index.php') ? 'active' : ''; ?>'><a href="./index.php">Home</a></li>
+                            <li class='<?php echo ($active == '/bakery/about.php') ? 'active' : ''; ?>'><a href="./about.php">About</a></li>
+                            <li class='<?php echo ($active == '/bakery/shop.php') ? 'active' : ''; ?>'><a href="./shop.php">Shop</a></li>
+                            <li class='<?php echo ($active == '/bakery/shop-details.php') ? 'active' : ''; ?>'><a href="./shop-details.php">Shop Details</a></li>
+                            <li class='<?php echo ($active == '/bakery/shoping-cart.php') ? 'active' : ''; ?>'><a href="./shoping-cart.php">Shoping Cart</a></li>
+                            <li class='<?php echo ($active == '/bakery/contact.php') ? 'active' : ''; ?>'><a href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
