@@ -269,26 +269,20 @@
                 <div class="col-lg-6">
                     <div class="class__form">
                         <div class="section-title">
-                            <span>Class cakes</span>
-                            <h2>Made from your <br />own hands</h2>
+                            <span>Feedback Form</span>
+                            <h2>We Want  <br />Your Feedback</h2>
                         </div>
                         <form action="#">
                             <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Phone">
-                            <select>
-                                <option value="">Studying Class</option>
-                                <option value="">Writting Class</option>
-                                <option value="">Reading Class</option>
-                            </select>
-                            <input type="text" placeholder="Type your requirements">
+                            <input type="text" placeholder="Email">
+                             <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea> <br>
                             <button type="submit" class="site-btn">registration</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="class__video set-bg" data-setbg="img/class-video.jpg">
-                <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1"
-                class="play-btn video-popup"><i class="fa fa-play"></i></a>
+            <div class="class__video set-bg mt-3" data-setbg="img/">
+                <img src="img/feedback.jpg" alt="" height="500px" width="" style="border-radius:10px;" class="mt-5">
             </div>
         </div>
     </section>
