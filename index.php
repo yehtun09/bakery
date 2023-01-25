@@ -1,5 +1,11 @@
 <?php
+// ob_start();
  include_once "layout/header.php";
+ include_once "controller/feedback_controller.php";
+
+ $feedbacksController=new feedbacksController();
+ $feedbacks=$feedbacksController->Feedbacks();
+ var_dump($feedbacks);
 
 ?>
 
@@ -267,16 +273,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="class__form">
+                    <div class="class__form mb-5">
                         <div class="section-title">
                             <span>Feedback Form</span>
                             <h2>We Want  <br />Your Feedback</h2>
                         </div>
                         <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                             <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea> <br>
-                            <button type="submit" class="site-btn">registration</button>
+                            <input type="text" placeholder="Name" name="name">
+                            <input type="text" placeholder="Email" name="email">
+                            <input type="text" name="address" id="" placeholder="address">
+                            <select name="rate" id="" class="form-select">
+                                <option value="" selected>Rating</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                             <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="write feedback"></textarea> <br>
+                            <button type="submit" class="site-btn" name="submit">registration</button>
                         </form>
                     </div>
                 </div>
