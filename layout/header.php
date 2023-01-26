@@ -12,9 +12,9 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -93,11 +93,11 @@
                                             <li>ENG</li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Sign in</a> <span class="arrow_carrot-down"></span></li>
+                                    <li><a href="login.php">Sign in</a> <span class="arrow_carrot-down"></span></li>
                                 </ul>
                             </div>
                             <div class="header__logo">
-                                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                                <a href="./index.php"><img src="img/logo.png" alt=""></a>
                             </div>
                             <div class="header__top__right">
                                 <div class="header__top__right__links">
@@ -119,16 +119,22 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="header__menu mobile-menu">
-                        <?php 
-                            $active = $_SERVER["PHP_SELF"];
+                        <?php
+                        $active = $_SERVER["PHP_SELF"];
                         ?>
                         <ul>
-                            <li class='<?php echo ($active == '/bakery/index.php') ? 'active' : ''; ?>'><a href="./index.php">Home</a></li>
-                            <li class='<?php echo ($active == '/bakery/about.php') ? 'active' : ''; ?>'><a href="./about.php">About</a></li>
-                            <li class='<?php echo ($active == '/bakery/shop.php') ? 'active' : ''; ?>'><a href="./shop.php">Shop</a></li>
-                            <li class='<?php echo ($active == '/bakery/shop-details.php') ? 'active' : ''; ?>'><a href="./shop-details.php">Shop Details</a></li>
-                            <li class='<?php echo ($active == '/bakery/shoping-cart.php') ? 'active' : ''; ?>'><a href="./shoping-cart.php">Shoping Cart</a></li>
-                            <li class='<?php echo ($active == '/bakery/contact.php') ? 'active' : ''; ?>'><a href="./contact.php">Contact</a></li>
+                            <li class='<?php echo ($active == '/bakery/index.php') ? 'active' : ''; ?>'><a
+                                    href="./index.php">Home</a></li>
+                            <li class='<?php echo ($active == '/bakery/about.php') ? 'active' : ''; ?>'><a
+                                    href="./about.php">About</a></li>
+                            <li class='<?php echo ($active == '/bakery/shop.php') ? 'active' : ''; ?>'><a
+                                    href="./shop.php">Shop</a></li>
+                            <li class='<?php echo ($active == '/bakery/shop-details.php') ? 'active' : ''; ?>'><a
+                                    href="./shop-details.php">Shop Details</a></li>
+                            <li class='<?php echo ($active == '/bakery/shoping-cart.php') ? 'active' : ''; ?>'><a
+                                    href="./shoping-cart.php">Shoping Cart</a></li>
+                            <li class='<?php echo ($active == '/bakery/contact.php') ? 'active' : ''; ?>'><a
+                                    href="./contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
