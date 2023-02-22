@@ -3,6 +3,7 @@ ob_start();
 include_once "layout/header.php";
 //include_once "controller/feedback_controller.php";
 include_once "controller/baker_controller.php";
+include_once "controller/promotion_controller.php";
 
 // $feedbacksController = new feedbacksController();
 // $feedbacks = $feedbacksController->Feedbacks();
@@ -11,6 +12,10 @@ include_once "controller/baker_controller.php";
 $bakerController = new BakerController();
 $bakers = $bakerController->getBakers();
 //var_dump($bakers);
+
+$promotionController = new PromotionController();
+$promotions = $promotionController->Promotions();
+//var_dump($promotions);
 
 ?>
 
@@ -22,20 +27,27 @@ $bakers = $bakerController->getBakers();
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="hero__text">
-                            <h2>Making your life sweeter one bite at a time!</h2>
-                            <a href="#" class="primary-btn">Our cakes</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero__item set-bg" data-setbg="img/hero/hero-1.jpg">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="hero__text">
-                            <h2>Making your life sweeter one bite at a time!</h2>
-                            <a href="#" class="primary-btn">Our cakes</a>
+                            <?php
+                            //echo strtotime(date('d-m-Y'));
+                            //echo date('d-m-Y');
+                            echo "<h2>Making your life sweeter one bite at a time!</h2>";
+                            for ($index = 0; $index < count($promotions); $index++) {
+                                if ($promotions[$index]['start_date'] <= date('Y-m-d') && date('Y-m-d') <= $promotions[$index]['end_date']) {
+
+                                    echo "<h4 style='color: #f08632;'><b>Enjoy " . $promotions[$index]['name'] . " and get " . $promotions[$index]['percentage'] . "% discount on every item.</b></h4><br>";
+
+                                    
+                            
+                                    if ($promotions[$index]['start_date'] == $promotions[$index]['end_date']) {
+                                        echo "<h3 class='p-1' style='color: #f08632;'>Promotion is only for today!!</h3>";
+                                    } else{
+                                        echo "<p style='color: #f08632;'>Promotion period is from " . date_format(date_create($promotions[$index]['start_date']), 'd/m/Y') . "  to " . date_format(date_create($promotions[$index]['end_date']), 'd/m/Y') . "</p>";
+                                    }
+
+                                }
+                            }
+                            ?>
+                            <!-- <a href="#" class="primary-btn">Our cakes</a> -->
                         </div>
                     </div>
                 </div>

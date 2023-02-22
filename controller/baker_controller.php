@@ -20,5 +20,23 @@ class BakerController extends Baker
         $result = $this->newBaker($name, $position, $note, $photo);
         return $result;
     }
+
+    public function getBaker($id)
+    {
+        $result = $this->getBakerInfo($id);
+        return $result;
+    }
+
+    public function updateBaker($id, $name, $position, $note, $photo)
+    {
+        $result = $this->updateBakerInfo($id, $name, $position, $note, $photo);
+        return $result;
+    }
+
+    public function deleteBaker($id)
+    {
+        $result = $this->deleteBakerInfo($id);
+        return $result;
+    }
 }
 ?>

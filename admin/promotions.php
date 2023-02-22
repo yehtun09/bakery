@@ -1,11 +1,9 @@
 <?php
 include_once 'layout/header.php';
-include_once __DIR__ . '/../controller/baker_controller.php';
+include_once __DIR__ . '/../controller/promotion_controller.php';
 
-$bakerController = new BakerController();
-$bakers = $bakerController->getAllBakers();
-
-//var_dump($bakers);
+$promotionController = new PromotionController();
+$promotions = $promotionController->Promotions();
 
 ?>
 
@@ -30,7 +28,7 @@ $bakers = $bakerController->getAllBakers();
 
             <div class="row">
                 <div class="col-md-6">
-                    <a href="create_baker.php" class="btn btn-primary mb-3">Add new baker</a>
+                    <a href="add_promotions.php" class="btn btn-primary mb-3">Add new position</a>
                 </div>
             </div>
 
@@ -40,30 +38,35 @@ $bakers = $bakerController->getAllBakers();
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Image</th>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Note</th>
-                            <th>Action</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Discount Percentage</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="delete_baker">
+
+                    <tbody id="delete_promotion">
                         <?php
-                        for ($row = 0; $row < count($bakers); $row++) {
-                            echo "<tr>";
-                            echo "<td><img src = 'uploads/" . $bakers[$row]['image'] . "' height = '50px'; width = '50px';></td>";
-                            echo "<td>" . $bakers[$row]["name"] . "</td>";
-                            echo "<td>" . $bakers[$row]["position"] . "</td>";
-                            echo "<td>" . $bakers[$row]["note"] . "</td>";
-                            echo "<td id = '" . $bakers[$row]['id'] . "'> 
-                            <a class = 'btn btn-warning mr-3' href='edit_baker.php?id=" . $bakers[$row]['id'] . "'> Edit </a> 
-                        <button class = 'btn btn-danger delete'> Delete </button>";
-                            echo "</tr>";
+                        for ($row = 0; $row < count($promotions); $row++) {
+
+                            echo '<tr>';
+                            echo '<td>' . $promotions[$row]['name'] . '</td>';
+                            echo '<td>' . $promotions[$row]['start_date'] . '</td>';
+                            echo '<td>' . $promotions[$row]['end_date'] . '</td>';
+                            echo '<td>' . $promotions[$row]['percentage'] . '</td>';
+                            echo "<td id = '" . $promotions[$row]['id'] . "'> 
+                            <a class = 'btn btn-warning mr-3' href='edit_promotion.php?id=" . $promotions[$row]['id'] . "'> Edit </a> 
+                        <a class = 'btn btn-danger delete'> Delete </a>";
+                            echo '</tr>';
                         }
                         ?>
                     </tbody>
+
+
                 </table>
             </div>
+
         </div>
         <!-- /.container-fluid -->
 

@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -69,6 +69,19 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Baker</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="promotions.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Promotions</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="ingredients.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Ingredients</span></a>
+            </li>
+
 
 
             <!-- Divider -->

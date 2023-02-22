@@ -53,6 +53,53 @@ class Baker
             return false;
         }
     }
+
+    public function getBakerInfo($id)
+    {
+        $this->pdo = Database::connect();
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "Select * from bakers where id = :id";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(pdo::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function updateBakerInfo($id, $name, $position, $note, $photo)
+    {
+        //1. get connection
+        $this->pdo = Database::connect();
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        //2. write sql
+        $sql = "update bakers set name = :name, position = :position, note = :note, image = :photo where id = :id";
+
+        //3. prepare sql
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(":id", $id);
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":position", $position);
+        $statement->bindParam(":note", $note);
+        $statement->bindParam(":photo", $photo);
+
+        //4. execute statement
+        return $statement->execute();
+    }
+
+    public function deleteBakerInfo($id)
+    {
+        $this->pdo = Database::connect();
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "delete from bakers where id = :id";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindParam(":id", $id);
+        if ($statement->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 ?>

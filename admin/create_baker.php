@@ -51,7 +51,7 @@ if (isset($_POST["add"])) {
 
     if (!$error) {
         $result = $bakerController->addBaker($name, $position, $note, $photo);
-        echo $result;
+        //echo $result;
         if ($result) {
             header('location:bakers.php');
             exit();
